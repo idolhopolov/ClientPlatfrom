@@ -1,0 +1,8 @@
+parameters:
+  exception_to_status:
+    InvalidArgumentException: 400
+    Symfony\Component\HttpKernel\Exception\BadRequestHttpException: 400
+    Symfony\Component\Serializer\Exception\NotNormalizableValueException: 400
+    Symfony\Component\Serializer\Exception\MissingConstructorArgumentsException: 400
+    Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException: 401
+    Assert\AssertionFailedException: 400

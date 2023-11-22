@@ -1,0 +1,34 @@
+version: "3.5"
+# https://docs.docker.com/compose/compose-file/compose-versioning/
+
+services:
+  nginx:
+    build:
+      context: ./docker/nginx
+    volumes:
+      - ./:/var/www/symfony:cached
+    ports:
+      - "80:80"
+
+  php:
+    build:
+      context: ./docker/php
+    volumes:
+      - ./:/var/www/symfony:cached
+
+  mysql:
+    image: mysql:8.0.33
+    platform: linux/x86_64
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - "mysql:/var/lib/mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=ask_spot
+      - MYSQL_USER=ask_spot_user
+      - MYSQL_PASSWORD=ask_spot_pass
+    ports:
+      - "8003:3306"
+
+volumes:
+  mysql:

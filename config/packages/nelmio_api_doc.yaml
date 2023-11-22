@@ -1,0 +1,45 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Askspot
+            description: Client portal
+            version: 1.0.0
+        paths:
+            /api/v1/login:
+                post:
+                    tags:
+                        - Client Portal / User
+                    summary: Login into the api.
+                    requestBody:
+                        content:
+                            application/json:
+                                schema:
+                                    properties:
+                                        email:
+                                            type: string
+                                        password:
+                                            type: string
+                                    type: object
+                    responses:
+                        '200':
+                            description: OK
+                            content:
+                                application/json:
+                                    schema:
+                                        type: object
+                                        properties:
+                                            success:
+                                                type: string
+                                            data:
+                                                type: object
+                                                properties:
+                                                    token: string
+                        '401':
+                            description: Invalid credentials
+                        '400':
+                            description: Invalid JSON.
+                    security: []
+
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
