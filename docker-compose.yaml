@@ -24,9 +24,9 @@ services:
       - "mysql:/var/lib/mysql"
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=ask_spot
-      - MYSQL_USER=ask_spot_user
-      - MYSQL_PASSWORD=ask_spot_pass
+      - MYSQL_DATABASE=db_name
+      - MYSQL_USER=db_user
+      - MYSQL_PASSWORD=pass
     ports:
       - "8003:3306"
 

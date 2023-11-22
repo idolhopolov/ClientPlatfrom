@@ -40,7 +40,7 @@ abstract class ApiJsonTestCase extends WebTestCase
     {
         $this->client = static::createClient();
         $this->factory = new DoctrineModelFactory(
-            $this->service('doctrine.orm.default_entity_manager'), DoctrineModelFactory::ASK_SPOT_DB_NAME);
+            $this->service('doctrine.orm.default_entity_manager'), DoctrineModelFactory::DBNAME_TEST);
     }
 
     protected function tearDown(): void

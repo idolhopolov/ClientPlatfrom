@@ -10,9 +10,9 @@ use ReflectionClass;
 
 final class DoctrineModelFactory
 {
-    public const ASK_SPOT_DB_NAME = 'dbname_test';
+    public const DBNAME_TEST = 'dbname_test';
 
-    private FactoryAskSpot $factory;
+    private FactoryClientPlatform $factory;
     private EntityManager|null $entityManager;
 
     public function __construct(EntityManager|null $entityManager, string $dbName)
@@ -53,10 +53,10 @@ final class DoctrineModelFactory
         return $this->entityManager->getConnection();
     }
 
-    public function setUpFactory(string $dbName): FactoryAskSpot
+    public function setUpFactory(string $dbName): FactoryClientPlatform
     {
-        if ($dbName === self::ASK_SPOT_DB_NAME) {
-            return new FactoryAskSpot();
+        if ($dbName === self::DBNAME_TEST) {
+            return new FactoryClientPlatform();
         }
 
         throw new \UnexpectedValueException('Something wrong with factory');

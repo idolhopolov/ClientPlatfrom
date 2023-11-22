@@ -20,7 +20,7 @@ class FunctionalTestCase extends KernelTestCase
         $this->entityManager = $this->service('doctrine.orm.default_entity_manager');
 
         $this->factory = new DoctrineModelFactory(
-            $this->entityManager, DoctrineModelFactory::ASK_SPOT_DB_NAME);
+            $this->entityManager, DoctrineModelFactory::DBNAME_TEST);
     }
 
     protected function tearDown(): void

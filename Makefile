@@ -5,7 +5,7 @@ initialize:
 	docker-compose exec php bin/console lexik:jwt:generate-keypair
 
 load_mock_data:
-	docker-compose exec php bin/console app:film:import src/Infrastructure/System/Mock/import-csv-ask_spot.csv
+	docker-compose exec php bin/console app:film:import src/Infrastructure/System/Mock/import-csv-dummy_data.csv
 
 test:
 	docker-compose exec php bin/console doctrine:database:create --env=test

@@ -10,7 +10,7 @@ use App\Domain\User\ValueObject\Password;
 use Faker\Factory as FactoryFaker;
 use Faker\Generator;
 
-class FactoryAskSpot
+class FactoryClientPlatform
 {
     private Generator $faker;
 
